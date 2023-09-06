@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(to right, rgb(12, 12, 12), rgb(44, 43, 43));
+}
+
+.container{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    background-color: grey;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button{
+    font-size: 2em;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+#resultado{
+    display: flex;
+    flex-direction: row;
+    color: red; 
+}
+
+
+
