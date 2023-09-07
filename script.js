@@ -8,18 +8,11 @@ for (var i = 0; i < Number.length; i++) {
     Number[i].addEventListener("click", numerar);
 }
 
-function numerar(){
-    console.log("working")
-    result();
+function numerar(event) {
+    var valueBtn = parseInt(event.target.getAttribute("data-valor"));
+    result(valueBtn);
 }
 
-function result(){
-    Result.innerHTML = Number.value;
+function result(valor1) {
+    Result.innerHTML += valor1;
 }
-
-
-
-
-
-
-
