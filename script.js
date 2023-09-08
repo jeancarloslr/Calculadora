@@ -4,6 +4,9 @@ var Operator = window.document.getElementsByClassName('operador');
 var Apagador = window.document.getElementById('apagador')
 var Equal = window.document.getElementById('equal');
 
+var valueBtn = 0;   
+var valueOp = 0;
+
 //alcançar todos os elementos(números) com a classe number
 for (var i = 0; i < Number.length; i++) {
     Number[i].addEventListener("click", numerar);
@@ -17,17 +20,22 @@ for (var i = 0; i < Operator.length; i++) {
 Equal.addEventListener('click', equar)
 
 function numerar(event) {
-    var valueBtn = parseInt(event.target.getAttribute("data-valor"));
+    valueBtn = parseInt(event.target.getAttribute("data-valor"));
     Result.innerHTML += `${valueBtn}`;
 }
 
 function Operar(event) {
-    var valueOp = event.target.getAttribute("data-valor");
+    valueOp = event.target.getAttribute("data-valor");
     Result.innerHTML += ` ${valueOp} `;
 }
 
 function equar(){
- 
+   if(valueOp == '+'){
+    console.log(valueBtn + valueBtn);
+   }else{
+    console.log('no');
+   }
+   
 }
 
 
