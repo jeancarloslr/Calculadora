@@ -4,8 +4,8 @@ var Operator = window.document.getElementsByClassName('operador');
 var Apagador = window.document.getElementById('apagador')
 var Equal = window.document.getElementById('equal');
 
-var valueBtn = 0;   
-var valueOp = 0;
+var valueBtn = "";   
+var valueOp = "";
 
 //alcançar todos os elementos(números) com a classe number
 for (var i = 0; i < Number.length; i++) {
@@ -20,22 +20,24 @@ for (var i = 0; i < Operator.length; i++) {
 Equal.addEventListener('click', equar)
 
 function numerar(event) {
-    valueBtn = parseInt(event.target.getAttribute("data-valor"));
-    Result.innerHTML += `${valueBtn}`;
+    valueBtn += event.target.getAttribute("data-valor");
+    Result.innerHTML = valueBtn;
 }
 
 function Operar(event) {
-    valueOp = event.target.getAttribute("data-valor");
-    Result.innerHTML += ` ${valueOp} `;
+    if(valueBtn !== ""){
+        valueOp = event.target.getAttribute("data-valor");
+        Result.innerHTML = valueBtn + " " + valueOp + " ";
+        valueBtn = ""; // Reseta o número atual.;
+    }
 }
 
 function equar(){
-   if(valueOp == '+'){
-    console.log(valueBtn + valueBtn);
-   }else{
-    console.log('no');
+   if(valueBtn !== "" && valueOp === '+'){
+    var result = parseInt(valueBtn) + parseInt(valueBtn);
+    Result.innerHTML = result.toString(); 
+    console.log(result);
    }
-   
 }
 
 
