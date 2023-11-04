@@ -18,6 +18,8 @@ for (var i = 0; i < Operator.length; i++) {
 }
 
 Equal.addEventListener('click', equar);
+Apagador.addEventListener('click', deletar);
+
 
 function numerar(event) {
     valueBtn += event.target.getAttribute("data-valor");
@@ -32,6 +34,7 @@ function Operar(event) {
         valueBtn = "";
     }
 }
+
 function equar() {
     if (valueBtn !== "" && firstValue !== "" && valueOp) {
         var result;       
@@ -54,3 +57,9 @@ function equar() {
         Result.innerHTML = result.toString();
     }
 }
+
+function deletar(){
+    valueBtn = valueBtn.slice(0, -1); // Remove o último caractere da string valueBtn
+    Result.innerHTML = valueBtn;
+}
+
